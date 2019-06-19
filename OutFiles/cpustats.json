@@ -1,0 +1,17 @@
+[
+    {
+        "VMName":  "LinuxMintOS",
+        "Current CPU Usage(%)":  3,
+        "Average CPU Usage(MHz)":  1
+    },
+    {
+        "VMName":  "ReactOS",
+        "Current CPU Usage(%)":  0,
+        "Average CPU Usage(MHz)":  1
+    },
+    {
+        "VMName":  "UbuntuVM",
+        "Current CPU Usage(%)":  0,
+        "Average CPU Usage(MHz)":  8
+    }
+]

@@ -1,0 +1,23 @@
+[
+    {
+        "VMName":  "LinuxMintOS",
+        "Memory Assigned(M)":  1024,
+        "Minimum Memory Usage(M)":  1024,
+        "Maximum Memory Usage(M)":  1024,
+        "Average Memory Usage(M)":  93
+    },
+    {
+        "VMName":  "ReactOS",
+        "Memory Assigned(M)":  1024,
+        "Minimum Memory Usage(M)":  1024,
+        "Maximum Memory Usage(M)":  1024,
+        "Average Memory Usage(M)":  87
+    },
+    {
+        "VMName":  "UbuntuVM",
+        "Memory Assigned(M)":  0,
+        "Minimum Memory Usage(M)":  944,
+        "Maximum Memory Usage(M)":  6308,
+        "Average Memory Usage(M)":  395
+    }
+]

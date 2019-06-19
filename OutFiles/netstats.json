@@ -1,0 +1,17 @@
+[
+    {
+        "VMName":  "LinuxMintOS",
+        "Inbound(M)":  38,
+        "Outbound(M)":  3
+    },
+    {
+        "VMName":  "ReactOS",
+        "Inbound(M)":  0,
+        "Outbound(M)":  0
+    },
+    {
+        "VMName":  "UbuntuVM",
+        "Inbound(M)":  885,
+        "Outbound(M)":  24
+    }
+]

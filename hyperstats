@@ -1,0 +1,97 @@
+#!/usr/bin/python
+
+#Name: HyperStats
+#Creators: Sandesh Hebbar <hebbarsandesh98@gmail.com>, Dheeraj Acharya <dheerajacharya78@gmail.com>
+#Description: HyperV Resource Utilizaiton Statistics Reporter
+
+import os
+import json
+import subprocess
+import sys
+
+from flask import Flask, g, jsonify, request	
+
+app = Flask(__name__)
+
+def shutdown_server():
+	func = request.environ.get('werkzeug.server.shutdown')
+	if func is None:
+		raise RuntimeError('Not running with werkzeug server')
+	func()
+
+@app.route('/')
+def init():
+	return 'Hello'
+
+@app.route('/shutdown')
+def shutdwn():
+	shutdown_server()
+
+	return 'Server shutting down'
+
+@app.route('/netstats')
+def network():
+
+	try:
+		p = subprocess.Popen(["powershell.exe",
+        os.path.dirname(app.instance_path) + '\\PowerShell_Scripts\\networkStats.ps1'],
+        stdout=sys.stdout)
+	except Exception as e:
+		raise e
+	else:
+		p.communicate()
+		with open(os.path.dirname(app.instance_path) + '\\OutFiles\\netstats.json', 'r') as file_content:
+			content = json.load(file_content)
+
+        return jsonify(content)
+
+@app.route('/cpustats')
+def cpu():
+
+	try:
+		p = subprocess.Popen(["powershell.exe",
+        os.path.dirname(app.instance_path) + '\\PowerShell_Scripts\\cpuStats.ps1'],
+        stdout=sys.stdout)
+	except Exception as e:
+		raise e
+	else:
+		p.communicate()
+		with open(os.path.dirname(app.instance_path) + '\\OutFiles\\cpustats.json', 'r') as file_content:
+			content = json.load(file_content)
+
+    	return jsonify(content)
+
+@app.route('/memstats')
+def memory():
+
+	try:
+		p = subprocess.Popen(["powershell.exe",
+        os.path.dirname(app.instance_path) + '\\PowerShell_Scripts\\memoryStats.ps1'],
+        stdout=sys.stdout)	
+	except Exception as e:
+		raise e
+	else:
+		p.communicate()
+		with open(os.path.dirname(app.instance_path) + '\\OutFiles\\memstats.json', 'r') as file_content:
+			content = json.load(file_content)
+
+    	return jsonify(content)
+
+@app.route('/diskstats')
+def disk():
+
+	try:
+		p = subprocess.Popen(["powershell.exe",
+        os.path.dirname(app.instance_path) + '\\PowerShell_Scripts\\diskUtilStats.ps1'],
+        stdout=sys.stdout)	
+	except Exception as e:
+		raise e
+	else:
+		p.communicate()
+		with open(os.path.dirname(app.instance_path) + '\\OutFiles\\diskstats.json', 'r') as file_content:
+			content = json.load(file_content)
+
+    	return jsonify(content)
+
+if __name__ == "__main__":
+    app.run(debug=False,host='0.0.0.0', port=9898)

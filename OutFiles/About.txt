@@ -1,0 +1,1 @@
+This directory keeps the output data in the form of JSON for further data analysis.

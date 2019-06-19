@@ -1,0 +1,23 @@
+[
+    {
+        "VMName":  "LinuxMintOS",
+        "Total Disk Allocated":  31460,
+        "Aggregated Disk Data Read":  2939,
+        "Aggregated Disk Data Written":  1684,
+        "Aggregated Average Latency":  5083
+    },
+    {
+        "VMName":  "ReactOS",
+        "Total Disk Allocated":  31100,
+        "Aggregated Disk Data Read":  539,
+        "Aggregated Disk Data Written":  22,
+        "Aggregated Average Latency":  0
+    },
+    {
+        "VMName":  "UbuntuVM",
+        "Total Disk Allocated":  26596,
+        "Aggregated Disk Data Read":  37285,
+        "Aggregated Disk Data Written":  22710,
+        "Aggregated Average Latency":  0
+    }
+]

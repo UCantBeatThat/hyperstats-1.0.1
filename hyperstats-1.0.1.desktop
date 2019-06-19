@@ -1,0 +1,8 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Terminal=true
+Exec=python /usr/share/hyperstats/hyperstats.py
+Name=HyperStats
+Comment=HyperV Resource Utilization Statistics Reporter
+Icon=/usr/share/hyperstats/hyper.png
