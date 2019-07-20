@@ -1,3 +1,4 @@
 # HyperStats-1.0.1
-HyperV Resource Utilization Statistics Reporter
+(For Windows)
+HyperV Resource Utilization Statistics Reporter 
 
